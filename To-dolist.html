@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TaskFlow - To-Do App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="to-dolist.css">
+</head>
+<body>
+
+
+<header class="app-header">
+    <div class="header-top">
+        <div class="user-info">
+            <div class="user-avatar">XC</div>
+            <div>
+                <p class="greeting">Good Morning!</p>
+                <h1 class="user-name" id="userName">Xean Coral</h1>
+            </div>
+        </div>
+        <button class="header-btn"><i class="fa-solid fa-bell"></i></button>
+    </div>
+</header>
+
+
+<div class="app-container">
+    <div class="tasks-grid" id="tasksGrid"></div>
+</div>
+
+
+<div class="modal" id="taskModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button class="back-btn" id="backBtn"><i class="fa-solid fa-chevron-left"></i></button>
+            <h2 id="modalTitle">Task Details</h2>
+            <div></div>
+        </div>
+        
+        <div class="modal-body" id="modalBody">
+        
+        </div>
+    </div>
+</div>
+
+
+<div class="modal" id="addTaskModal">
+    <div class="modal-content add-task-modal">
+        <div class="modal-header">
+            <h2>Add New Task</h2>
+            <button class="close-btn" id="closeAddModal"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        
+        <form class="task-form" id="taskForm">
+            <div class="form-group">
+                <label for="taskInput">Task Title</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-pen"></i>
+                    <input type="text" id="taskInput" placeholder="Enter task title" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="taskDate">Due Date</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <input type="date" id="taskDate">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="taskPriority">Priority</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-flag"></i>
+                        <select id="taskPriority" required>
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="taskNotes">Notes</label>
+                <div class="input-wrapper textarea-wrapper">
+                    <i class="fa-solid fa-note-sticky"></i>
+                    <textarea id="taskNotes" placeholder="Add notes..."></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-primary" id="addBtn">
+                <i class="fa-solid fa-plus"></i> Add Task
+            </button>
+        </form>
+    </div>
+</div>
+
+<button class="fab" id="fabBtn" title="Add new task">
+    <i class="fa-solid fa-plus"></i>
+</button>
+
+<nav class="bottom-nav">
+    <button class="nav-item active" data-view="all">
+        <i class="fa-solid fa-list-check"></i>
+        <span>All Tasks</span>
+    </button>
+    <button class="nav-item" data-view="pending">
+        <i class="fa-solid fa-hourglass-end"></i>
+        <span>Pending</span>
+    </button>
+    <button class="nav-item" data-view="completed">
+        <i class="fa-solid fa-check-circle"></i>
+        <span>Completed</span>
+    </button>
+</nav>
+
+<script src="to-dolist.js"></script>
+</body>
+</html>
